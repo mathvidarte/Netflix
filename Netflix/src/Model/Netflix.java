@@ -2,29 +2,28 @@ package Model;
 
 import processing.core.PApplet;
 
-public class Netflix {
+public class Netflix implements Comparable<Netflix> {
 	private String name, year, type;
 	private int rating;
 	private int posX;
 	private int posY;
 	private PApplet app;
 	
-	public Netflix (String name, String year, String type, int rating, int posX, int posY, PApplet app) {
+	public Netflix (String name, String year, String type, int rating, PApplet app) {
 		this.name = name;
 		this.year = year;
 		this.type = type;
 		this.rating = rating;
-		this.posX = posX;
-		this.posY = posY;
+		this.posY = 500;
 		this.app = app;
 	}
 	
-	public void drawAll (int posY, PApplet app) {
+	public void drawAll (int posX, PApplet app) {
 		app.fill (255);
-		app.text(this.name, posX, posY);
-		app.text(this.year, posX, posY);
-		app.text(this.type, posX, posY);
-		app.text(this.rating, posX, posY);
+		app.text(this.name, posX, posY + 20);
+		app.text(this.year, posX, posY + 40);
+		app.text(this.type, posX, posY + 60);
+		app.text(this.rating, posX, posY + 80);
 	}
 
 	public String getName() {
@@ -81,6 +80,11 @@ public class Netflix {
 
 	public void setApp(PApplet app) {
 		this.app = app;
+	}
+
+
+	public int compareTo(Netflix nextNetflix) {
+		return this.rating - nextNetflix.getRating();
 	}
 	
 	
