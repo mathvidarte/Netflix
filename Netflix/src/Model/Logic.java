@@ -7,7 +7,6 @@ import java.util.Collections;
 import java.util.LinkedList;
 
 import processing.core.PApplet;
-import processing.core.PImage;
 
 public class Logic {
 	private PApplet app;
@@ -23,12 +22,7 @@ public class Logic {
 	private Year yearNet;
 	private Type typeNet;
 	
-	private PImage breakingbad;
-	private PImage dark;
-	private PImage mindhunter;
-	private PImage ozark;
-	private PImage starTrek;
-	private PImage theIrishmen;
+	
 	
 	
 	
@@ -41,12 +35,7 @@ public class Logic {
 		netflix = new LinkedList <Netflix>();
 		createNetflix();
 		
-		breakingbad = app.loadImage ("imagen/breakingbad.jpg");
-		dark = app.loadImage ("imagen/dark.jpg");
-		mindhunter = app.loadImage ("imagen/mindhunter.jpg");
-		ozark = app.loadImage ("imagen/ozark.jpg");
-		starTrek = app.loadImage ("imagen/startrek.jpg");
-		theIrishmen = app.loadImage ("imagen/theIrishmen.jpg");
+		
 	}
 	
 	public void createNetflix () {
