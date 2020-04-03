@@ -7,7 +7,7 @@ import Model.Netflix;
 import processing.core.PApplet;
 
 public class ControllerMain {
-	private PApplet app;
+	
 	private Logic logic;
 	
 	public ControllerMain (PApplet app) {
