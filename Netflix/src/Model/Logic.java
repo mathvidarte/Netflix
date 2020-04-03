@@ -11,12 +11,19 @@ public class Logic {
 	private String [] textSplit;
 	private LinkedList <Netflix> netflix;
 	private String name;
-	private String year;
+	private int year;
 	private String type;
 	private int rating;
 	
+	private Name nameNet;
+	private Year yearNet;
+	private Type typeNet;
+	
+	
 	public Logic (PApplet app) {
 		this.app = app;
+		
+		
 		
 		text = app.loadStrings ("../data/netflix.txt");
 		netflix = new LinkedList <Netflix>();
@@ -27,7 +34,7 @@ public class Logic {
 		for (int i = 0; i < text.length; i++) {
 			textSplit = text[i].split(",");
 			name = textSplit[0];
-			year = textSplit [1];
+			year = Integer.parseInt (textSplit [1]);
 			rating = Integer.parseInt (textSplit[2]);
 			type = textSplit [3];
 			
@@ -48,6 +55,15 @@ public class Logic {
 		switch (r) {
 		case 'r':
 			Collections.sort(netflix);
+			break;
+		case 'n':
+			Collections.sort(netflix, nameNet);
+			break;
+		case 't':
+			Collections.sort(netflix, typeNet);
+			break;
+		case 'y' :
+			Collections.sort(netflix, yearNet);
 			break;
 		}
 	}

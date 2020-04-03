@@ -3,13 +3,14 @@ package Model;
 import processing.core.PApplet;
 
 public class Netflix implements Comparable<Netflix> {
-	private String name, year, type;
+	private String name, type;
 	private int rating;
+private int year;
 	private int posX;
 	private int posY;
 	private PApplet app;
 	
-	public Netflix (String name, String year, String type, int rating, PApplet app) {
+	public Netflix (String name, int year, String type, int rating, PApplet app) {
 		this.name = name;
 		this.year = year;
 		this.type = type;
@@ -23,7 +24,7 @@ public class Netflix implements Comparable<Netflix> {
 		app.text(this.name, posX, posY + 20);
 		app.text(this.year, posX, posY + 40);
 		app.text(this.type, posX, posY + 60);
-		app.text(this.rating, posX, posY + 80);
+		app.text(this.rating + "%", posX, posY + 80);
 	}
 
 	public String getName() {
@@ -34,11 +35,11 @@ public class Netflix implements Comparable<Netflix> {
 		this.name = name;
 	}
 
-	public String getYear() {
+	public int getYear() {
 		return year;
 	}
 
-	public void setYear(String year) {
+	public void setYear(int year) {
 		this.year = year;
 	}
 
